@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'sign_up_screen.dart';
+import 'utilities.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -58,42 +59,21 @@ class HomeScreen extends StatelessWidget {
                           ),
                         );
                       },
-                      child: Container(
-                        height: height * 0.07,
-                        width: width * 0.5,
-                        alignment: Alignment.center,
-                        margin: EdgeInsets.only(
-                            left: 20.0, right: 20.0, bottom: 20.0),
-                        decoration: BoxDecoration(
-                          color: Colors.grey,
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                        ),
-                        child: Text(
-                          'Sign in',
-                          style: TextStyle(fontSize: height * 0.025),
-                          textAlign: TextAlign.center,
-                        ),
+                      child: getButton(
+                        height: height,
+                        width: width,
+                        buttonColor: Colors.grey,
+                        text: 'Sign in',
                       ),
-                    )
+                    ),
                   ],
                 ),
-                Container(
-                  height: height * 0.07,
-                  width: width * 0.5,
-                  alignment: Alignment.center,
-                  margin:
-                      EdgeInsets.only(left: 20.0, right: 20.0, bottom: 20.0),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.all(Radius.circular(10)),
-                  ),
-                  child: Text(
-                    'Register',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        fontSize: height * 0.025, color: Colors.black),
-                  ),
-                ),
+                getButton(
+                    height: height,
+                    width: width,
+                    text: 'Register',
+                    textColor: Colors.black,
+                    buttonColor: Colors.white),
               ],
             ),
           ],

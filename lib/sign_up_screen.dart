@@ -1,14 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-
-const pad = EdgeInsets.only(left: 20.0, top: 20.0);
+import 'package:sign_in_ui/utilities.dart';
 
 class SignUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -89,26 +87,17 @@ class SignUp extends StatelessWidget {
                       Icons.remove_red_eye_outlined,
                       color: Colors.white,
                     ),
-                    labelText: '  password'),
+                    labelText: '  Password'),
               ),
             ),
           ),
           Spacer(),
           _buildSignUpBtn(context),
-          Container(
-            height: height * 0.07,
-            width: width * 0.5,
-            alignment: Alignment.center,
-            margin: EdgeInsets.only(left: 20.0, right: 20.0, bottom: 20.0),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.all(Radius.circular(10)),
-            ),
-            child: Text(
-              'Sign in',
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: height * 0.025, color: Colors.black),
-            ),
+          getButton(
+            height: height,
+            text: 'Sign in',
+            textColor: Colors.black,
+            buttonColor: Colors.white,
           ),
         ],
       ),
